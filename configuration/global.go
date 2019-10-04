@@ -162,7 +162,7 @@ func (c *Client) GetGlobalConfiguration(transactionID string) (int64, *models.Gl
 		Nbproc:                nbproc,
 		Nbthread:              nbthread,
 		Pidfile:               pidfile,
-		RuntimeApis:           rAPIs,
+		RuntimeAPIs:           rAPIs,
 		StatsTimeout:          statsTimeout,
 		CPUMaps:               cpuMaps,
 		SslDefaultBindCiphers: sslCiphers,
@@ -234,7 +234,7 @@ func (c *Client) PushGlobalConfiguration(data *models.Global, transactionID stri
 	p.Set(parser.Global, parser.GlobalSectionName, "pidfile", pPidfile)
 
 	sockets := []types.Socket{}
-	for _, rAPI := range data.RuntimeApis {
+	for _, rAPI := range data.RuntimeAPIs {
 		s := types.Socket{
 			Path:   *rAPI.Address,
 			Params: []params.BindOption{},
