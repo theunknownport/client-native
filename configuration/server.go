@@ -228,6 +228,10 @@ func parseServer(ondiskServer types.Server) *models.Server {
 				s.SendProxyV2 = "enabled"
 			case "no-send-proxy-v2":
 				s.SendProxyV2 = "disabled"
+			case "agent-check":
+				s.AgentCheck = "enabled"
+			case "no-agent-check":
+				s.AgentCheck = "disabled"
 			}
 		case *params.ServerOptionValue:
 			switch v.Name {
@@ -302,6 +306,12 @@ func serializeServer(s models.Server) types.Server {
 	}
 	if s.TLSTickets == "disabled" {
 		srv.Params = append(srv.Params, &params.ServerOptionWord{Name: "no-tls-tickets"})
+	}
+	if s.AgentCheck == "enabled" {
+		srv.Params = append(srv.Params, &params.ServerOptionWord{Name: "agent-check"})
+	}
+	if s.AgentCheck == "disabled" {
+		srv.Params = append(srv.Params, &params.ServerOptionWord{Name: "no-agent-check"})
 	}
 	if s.Maxconn != nil {
 		srv.Params = append(srv.Params, &params.ServerOptionValue{Name: "maxconn", Value: strconv.FormatInt(*s.Maxconn, 10)})
