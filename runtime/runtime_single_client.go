@@ -87,6 +87,8 @@ func (s *SingleRuntime) readFromSocket(command string) (string, error) {
 	bufferSize := 1024
 	buf := make([]byte, bufferSize)
 	var data strings.Builder
+	//HAProxy can send data chunked, so sometimes we do not have a full buffer on read
+	dataReadError := 0
 	for {
 		n, err := api.Read(buf[:])
 		if err != nil {
@@ -94,7 +96,14 @@ func (s *SingleRuntime) readFromSocket(command string) (string, error) {
 		}
 		data.Write(buf[0:n])
 		if n < bufferSize {
-			break
+			if dataReadError > 1 {
+				break
+			} else {
+				time.Sleep(1 * time.Millisecond)
+				dataReadError++
+			}
+		} else {
+			dataReadError = 0
 		}
 	}
 	api.Close()
