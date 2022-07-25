@@ -20,7 +20,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/haproxytech/client-native/v4/models"
+	"github.com/theunknownport/client-native/v4/models"
 )
 
 const (

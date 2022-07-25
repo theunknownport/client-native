@@ -19,7 +19,7 @@ import (
 	"io/ioutil"
 	"testing"
 
-	"github.com/haproxytech/client-native/v4/models"
+	"github.com/theunknownport/client-native/v4/models"
 )
 
 func generateUserConfig(config string) (string, error) {

@@ -23,10 +23,10 @@ import (
 	"github.com/haproxytech/config-parser/v4/spoe"
 	"github.com/haproxytech/config-parser/v4/types"
 
-	conf "github.com/haproxytech/client-native/v4/configuration"
-	"github.com/haproxytech/client-native/v4/configuration/options"
-	"github.com/haproxytech/client-native/v4/misc"
-	"github.com/haproxytech/client-native/v4/models"
+	conf "github.com/theunknownport/client-native/v4/configuration"
+	"github.com/theunknownport/client-native/v4/configuration/options"
+	"github.com/theunknownport/client-native/v4/misc"
+	"github.com/theunknownport/client-native/v4/models"
 )
 
 // SingleSpoe configuration client

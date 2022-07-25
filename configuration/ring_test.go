@@ -18,8 +18,8 @@ package configuration
 import (
 	"testing"
 
-	"github.com/haproxytech/client-native/v4/misc"
-	"github.com/haproxytech/client-native/v4/models"
+	"github.com/theunknownport/client-native/v4/misc"
+	"github.com/theunknownport/client-native/v4/models"
 )
 
 func TestGetRings(t *testing.T) {

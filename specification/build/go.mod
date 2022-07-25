@@ -1,4 +1,4 @@
-module github.com/haproxytech/dataplaneapi-specification/build
+module github.com/theunknownport/dataplaneapi-specification/build
 
 go 1.17
 

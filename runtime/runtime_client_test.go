@@ -18,8 +18,8 @@ package runtime
 import (
 	"testing"
 
-	"github.com/haproxytech/client-native/v4/models"
 	"github.com/stretchr/testify/assert"
+	"github.com/theunknownport/client-native/v4/models"
 )
 
 func Test_parseMapPayload(t *testing.T) {

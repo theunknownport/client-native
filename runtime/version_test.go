@@ -18,7 +18,7 @@ package runtime_test
 import (
 	"testing"
 
-	"github.com/haproxytech/client-native/v4/runtime"
+	"github.com/theunknownport/client-native/v4/runtime"
 )
 
 func TestHAProxyVersion(t *testing.T) {

@@ -20,10 +20,10 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/haproxytech/client-native/v4/misc"
-	"github.com/haproxytech/client-native/v4/models"
 	parser "github.com/haproxytech/config-parser/v4"
 	"github.com/stretchr/testify/assert"
+	"github.com/theunknownport/client-native/v4/misc"
+	"github.com/theunknownport/client-native/v4/models"
 )
 
 func TestClient_GetACLs(t *testing.T) {

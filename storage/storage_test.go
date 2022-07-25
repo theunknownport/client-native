@@ -23,8 +23,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/haproxytech/client-native/v4/misc"
 	"github.com/stretchr/testify/require"
+	"github.com/theunknownport/client-native/v4/misc"
 )
 
 func TestNew(t *testing.T) {

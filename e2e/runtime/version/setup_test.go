@@ -22,9 +22,9 @@ import (
 	"os/exec"
 	"testing"
 
-	client_native "github.com/haproxytech/client-native/v4"
-	"github.com/haproxytech/client-native/v4/e2e"
 	"github.com/stretchr/testify/suite"
+	client_native "github.com/theunknownport/client-native/v4"
+	"github.com/theunknownport/client-native/v4/e2e"
 )
 
 type MajorVersionInRuntime struct {
