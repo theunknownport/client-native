@@ -25,8 +25,6 @@ import (
 	"path/filepath"
 	"sync"
 
-	"github.com/google/renameio"
-
 	conf "github.com/theunknownport/client-native/v4/configuration"
 	"github.com/theunknownport/client-native/v4/misc"
 )
@@ -126,7 +124,7 @@ func (c *spoeclient) Create(name string, readCloser io.ReadCloser) (string, erro
 		version = fmt.Sprintf("%s%s", version, "1\n")
 		b = append([]byte(version), b...)
 	}
-	err = renameio.WriteFile(name, b, 0o644)
+	err = ioutil.WriteFile(name, b, 0o644)
 	if err != nil {
 		return "", err
 	}

@@ -5,12 +5,11 @@ import (
 	"bytes"
 	"fmt"
 	"io"
+	"io/ioutil"
 	"os"
 	"path/filepath"
 	"strconv"
 	"strings"
-
-	"github.com/google/renameio"
 
 	native_errors "github.com/theunknownport/client-native/v4/errors"
 	"github.com/theunknownport/client-native/v4/models"
@@ -41,7 +40,7 @@ func CreateMap(name string, file io.Reader) (*models.Map, error) {
 	if err != nil {
 		return nil, err
 	}
-	err = renameio.WriteFile(name, buf.Bytes(), 0o644)
+	err = ioutil.WriteFile(name, buf.Bytes(), 0o644)
 	if err != nil {
 		return nil, err
 	}

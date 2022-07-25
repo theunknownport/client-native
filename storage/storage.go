@@ -28,8 +28,6 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/google/renameio"
-
 	conf "github.com/theunknownport/client-native/v4/configuration"
 	"github.com/theunknownport/client-native/v4/misc"
 )
@@ -155,7 +153,7 @@ func (s storage) Replace(name string, config string) (string, error) {
 	case MapsType:
 	}
 
-	err = renameio.WriteFile(f, []byte(config), 0o644)
+	err = ioutil.WriteFile(f, []byte(config), 0o644)
 	if err != nil {
 		return "", err
 	}
@@ -192,7 +190,7 @@ func (s *storage) createSSL(name string, readCloser io.ReadCloser) (string, erro
 	if err != nil {
 		return "", err
 	}
-	err = renameio.WriteFile(name, b, 0o644)
+	err = ioutil.WriteFile(name, b, 0o644)
 	if err != nil {
 		return "", err
 	}
@@ -204,7 +202,7 @@ func (s *storage) createFile(name string, readCloser io.ReadCloser) (string, err
 	if err != nil {
 		return "", err
 	}
-	err = renameio.WriteFile(name, b, 0o644)
+	err = ioutil.WriteFile(name, b, 0o644)
 	if err != nil {
 		return "", err
 	}
