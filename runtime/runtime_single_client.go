@@ -87,7 +87,7 @@ func (s *SingleRuntime) readFromSocket(command string) (string, error) {
 	var api net.Conn
 	var err error
 
-	if api, err = net.DialTimeout("unix", s.socketPath, taskTimeout); err != nil {
+	if api, err = net.DialTimeout("tcp", s.socketPath, taskTimeout); err != nil {
 		return "", err
 	}
 	defer func() {
